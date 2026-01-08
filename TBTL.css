@@ -1,0 +1,286 @@
+/* cho body rộng bằng màng hình */
+html,body {
+    height:100%;
+    margin:0;
+}
+
+/* phân vùng cho từng phần trong body */
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer"
+     ;
+}
+/* main có thể chiến chọn không để không gian thừa */
+main {
+    flex:1; 
+}
+
+/* tạo 1 vùng chứa trong main để chưa các input select */
+.container-box {
+    width:60%;
+    min-height:700px;
+    background-color:  rgb(216, 214, 211);
+    margin:30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* nhãn của mỗi input-select */
+.label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* chỉnh bố cục cho input và select của phần số tín chỉ và điểm tích lũy hiện tại */
+.include_input_select{
+    align-items: flex-start;
+    gap:5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* chỉnh bố cục phần số tín chỉ hiện tại  */
+.input-box{
+    height: 25px;
+    max-width:425px;
+    width:100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+/* chỉnh cố cục cho phần cải thiện */
+.CT-box {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap:20px;
+    flex-wrap: wrap; 
+}
+
+/* chỉnh bố cục cho phần input của tín chỉ cải thiện */
+.input-TC {
+    height: 27px;
+    width: 140px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+/* chỉnh bố cục cho phần select chọn điểm cải thiện trước và sau */
+.before,.after {
+    height: 30px;
+    width: 140px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+/* nút thêm */
+.btn {
+    margin: 10px auto;
+    min-width:13%;
+    background-color: #4CAF50;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color:  #268a29;
+}
+
+/* vùng chứa các môn cải thiện được thêm */
+.list-box {
+    width: 60%;
+    margin: 25px auto;
+    padding: 10px;
+    background-color: rgb(255, 255, 254);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    min-height: 10px;
+}
+
+/* danh sách các môn cải thiện được thêm */
+.listbox {
+    background-color:  rgb(216, 214, 211);
+    border-radius: 6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1) ;
+}
+
+/* nút xóa */
+.xoa {
+    margin: 10px auto;
+    margin-left: auto;
+    width:20%;
+    background-color: #d70d0d;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.xoa:hover{
+    background-color:  #b04646;
+}
+
+/* bố cục cho mỗi môn cải thiện được thêm */
+ li {
+    display: flex;
+    gap:30px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 20px;
+}
+.col {
+    display: inline-block;
+    width: 150px;
+}
+.Tinchi {
+    text-align: left;
+}
+.DiemSo{
+    text-align: center;
+}
+
+/* vùng chứa các môn học trong học kỳ */
+.Diem-box {
+    display: flex;
+    align-items: center;  
+    gap: 30px;  
+    flex-wrap: wrap;  
+}
+
+/*input cho nhập số tín chỉ cho môn học ở học kỳ hiện tại*/
+.inputHK {
+    height: 25px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* chọn điểm cho môn học ở học kỳ hiện tại */
+.select {
+    width: 260px;
+    height:28px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* nút tính điểm trung bình tích lũy bao gồm cả học kỳ hiện tại */
+.dtbtl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    background-color: #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    padding: 10px 18px;
+}
+.dtb:hover {
+    background-color: #268a29;
+}
+
+/* chỉnh phần bố cục hiển thị trung bình tích lũy đã tính */
+.ketqua {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px auto;
+    color:black;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* dùng cho thiết bị di động */
+@media (max-width: 768px) {
+
+    /* vùng main */
+    .container-box {
+        width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .list-box {
+        width: 95%;
+    }
+
+    /* input + select full chiều ngang */
+    .input-box,
+    .select-box {
+        max-width: 220px;
+    }
+
+    /* các input xếp dọc */
+    .two-inputs {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    /* label nhỏ lại cho vừa màn hình */
+    .label-box {
+        font-size: 16px;
+    }
+
+    /* nút */
+    .btn, .dtb, .xoa {
+        width: 50%;
+        font-size: 15px;
+    }
+
+    /* mỗi môn hiển thị gọn hơn */
+    #list li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        gap: 10px; 
+        padding: 5px 10px;
+    }
+
+    .col {
+        width: 50%;
+    }
+
+    .ketqua {
+        font-size: 20px;
+    }
+}

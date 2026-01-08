@@ -1,0 +1,73 @@
+/* chỉnh bố cục phần header */
+/* bố cục chung cho header */
+.top-bar {
+    width: 100%;
+    height: 70px;         
+    background-color: #18010181; 
+    display: flex;
+    align-items: center;      
+    padding: 10 20px;
+    gap: 20px;           
+}
+
+/* logo */
+.image {
+    width: 6%;
+    height: 80px;
+    margin-top: 4px;
+}
+
+/* bố cục điều hướng */
+.navbar {
+    flex: 1;              
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* chứa các liên kết */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;             
+    gap: 20px;              
+}
+
+/* mỗi liên kết */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;  
+}
+
+/* chỉnh bố cục phần footer */
+/* bố cục footer chung */
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+/* chứa phần liên hệ và hình ảnh */
+.footerBox {
+    width:100%;
+    height:100px;
+    align-items: center;
+    background-color: #18010158;
+
+}
+
+/* hình ảnh */
+.footer_img {
+    width: 50px;
+    height:50px;
+    transition: color 0.2s ease;
+}
+
+/* phần liên hệ */
+.contact {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+}

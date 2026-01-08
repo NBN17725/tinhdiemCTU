@@ -1,0 +1,245 @@
+/* cho body rộng bằng màng hình */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* chia vùng cho 3 thằng header-main-footer */
+body {
+    display: grid;
+    min-height: 100vh;
+
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+/* chỉnh co dãn cho main */
+main {
+    flex:1;
+}
+
+/* chỉnh bố cục phần main */
+/* bố cục chung cho main */
+.container-box {
+    width: 65%;
+    margin: 30px auto ;
+    padding: 30px;
+    background-color: rgb(216, 214, 211);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    min-height: 200px;
+}
+
+/* ảnh */
+.input-box{
+    height: 35px;
+    width:260px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* bố cục vùng chưa các mục select, input*/
+.two-inputs {
+    display: flex;
+    align-items: center;  
+    gap: 30px;  
+    flex-wrap: wrap;  
+}
+
+/* sắp xếp vị trí các mục số tín chỉ, điểm, thêm môn */
+.form-group {
+    display: flex;
+    align-items: center;   
+    gap: 10px;  
+    flex:1;           
+}
+
+/* chọn điểm */
+.select-box {
+    height: 38px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 15px;
+}
+
+.label-box {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* nút thêm môn */
+.btn {
+    margin: 20px auto;
+    min-width:15%;
+    background-color: #4CAF50;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color:  #268a29;
+}
+
+/* danh sách môn đã thêm */
+.list-box {
+    width: 60%;
+    margin: 25px auto;
+    padding: 10px;
+    background-color: rgb(255, 255, 254);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-height: 10px;
+}
+
+.listBox {
+    margin: 10px auto;
+    font-size: 20px;
+    background-color: rgba(194, 189, 184, 0.381);
+    border: #07010181;
+    border-radius: 5px;
+}
+
+/* nút xóa */
+.xoa {
+    margin: 10px auto;
+    margin-left: auto;
+    width:20%;
+    background-color: #d70d0d;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.xoa:hover{
+    background-color:  #b04646;
+}
+
+/* mỗi môn được thêm */
+#list li {
+    display: flex;
+    gap:30px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.col {
+    display: inline-block;
+    width: 150px;
+}
+
+.Tinchi {
+    text-align: left;
+}
+.DiemSo{
+    text-align: center;
+}
+
+/* nút tính điểm */
+.dtb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    background-color: #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    padding: 10px 18px;
+}
+.dtb:hover {
+    background-color: #268a29;
+}
+
+/* kết quả */
+.ketqua {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px auto;
+    color:black;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* dùng cho thiết bị di động */
+@media (max-width: 768px) {
+
+    /* vùng main */
+    .container-box {
+        width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .list-box {
+        width: 95%;
+    }
+
+    /* input + select full chiều ngang */
+    .input-box,
+    .select-box {
+        max-width: 220px;
+    }
+
+    /* các input xếp dọc */
+    .two-inputs {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    /* label nhỏ lại cho vừa màn hình */
+    .label-box {
+        font-size: 16px;
+    }
+
+    /* nút */
+    .btn, .dtb, .xoa {
+        width: 50%;
+        font-size: 15px;
+    }
+
+    /* mỗi môn hiển thị gọn hơn */
+    #list li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        gap: 10px; 
+        padding: 5px 10px;
+    }
+
+    .col {
+        width: 50%;
+    }
+
+    .ketqua {
+        font-size: 20px;
+    }
+}

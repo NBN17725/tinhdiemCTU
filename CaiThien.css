@@ -1,0 +1,250 @@
+/* cho body cao bằng với kích cỡ màng hình */
+html,body {
+    height:100%;
+    margin:0;
+}
+
+/* chia vùng cho từng thằng header-main-footer */
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+                "header" 
+                "main"
+                "footer";
+}
+
+/* main sẽ lắp đầy các khoản trống */
+main {
+    flex:1;
+}
+
+/* hộp chứa tất cả nội dung bên trong main */
+.container-box {
+    width:60%;
+    min-height:500px;
+    background-color: rgb(216, 214, 211);
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgb(0, 0, 0, 0.1);
+}
+
+/* bố cục của nhập tín chỉ và điểm trung bình tích lũy */
+.include_TC_TBTL {
+    align-items: flex-start;
+    gap:5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* nhãn của mỗi ô nhập */
+.label {
+    font-size: 20px;
+}
+
+/* ô nhập dữ liệu */
+.inputBox {
+    width:100%;
+    height: 25px;
+    max-width: 600px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: rgb(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+/* bố cục của phần cải thiện */
+.tinchivaDiem {
+    display: flex;
+    align-items: center;  
+    gap: 30px;  
+    flex-wrap: wrap;  
+}
+
+/* ô nhập dữ liệu của phần tín chỉ cải thiện */
+.inputTC {
+    height: 27px;
+    width: 140px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* phần chọn dữ liệu của tín chỉ cải thiện */
+.selectDiem {
+    width: 140px;
+    height:30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* nút thêm */
+.btn {
+    margin: 10px auto;
+    min-width:13%;
+    background-color: #4CAF50;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color:  #268a29;
+}
+
+/* vùng chưa các môn được thêm*/
+.list-box {
+    width: 60%;
+    margin: 30px auto;
+    padding: 10px;
+    min-height: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgb(0,0,0,0.1);
+    background-color: rgb(255, 255, 254);
+}
+
+/* bố cục vùng cho mỗi môn được thêm */
+.listBox {
+    background-color: #ccc;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgb(0,0,0,0.1);
+}
+
+/* nút xóa */
+.xoa {
+    margin: 10px auto;
+    margin-left: auto;
+    width:20%;
+    background-color: #d70d0d;
+    color: white;                
+    border: none;                
+    padding: 10px 18px;         
+    border-radius: 6px;         
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.xoa:hover{
+    background-color:  #b04646;
+}
+
+/* bố cục cho mỗi môn cải thiện được thêm */
+ li {
+    display: flex;
+    gap:30px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 20px;
+}
+.col {
+    display: inline-block;
+    width: 150px;
+}
+.Tinchi {
+    text-align: left;
+}
+.DiemSo{
+    text-align: center;
+}
+
+/* nút tính điểm trung bình tích lũy bao gồm cả học kỳ hiện tại */
+.dtbtl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    background-color: #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    padding: 10px 18px;
+}
+.dtb:hover {
+    background-color: #268a29;
+}
+
+/* kết quả */
+.ketqua{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px auto;
+    color:black;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* dùng cho thiết bị di động */
+@media (max-width: 768px) {
+
+    /* vùng main */
+    .container-box {
+        width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .list-box {
+        width: 95%;
+    }
+
+    /* input + select full chiều ngang */
+    .input-box,
+    .select-box {
+        max-width: 220px;
+    }
+
+    /* các input xếp dọc */
+    .two-inputs {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    /* label nhỏ lại cho vừa màn hình */
+    .label-box {
+        font-size: 16px;
+    }
+
+    /* nút */
+    .btn, .dtb, .xoa {
+        width: 50%;
+        font-size: 15px;
+    }
+
+    /* mỗi môn hiển thị gọn hơn */
+    #list li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        gap: 10px; 
+        padding: 5px 10px;
+    }
+
+    .col {
+        width: 50%;
+    }
+
+    .ketqua {
+        font-size: 20px;
+    }
+}

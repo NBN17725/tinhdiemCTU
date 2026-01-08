@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Điểm CTU</title>
+        <link rel="stylesheet" href="headerAndfooter.css">
+        <link rel="stylesheet" href="CaiThien.css">
+</head>
+<body>
+    <script src="CaiThien.js"></script>
+    <header class="top-bar">
+        <img class="image" src="Untitled design.png">
+        <nav class="navbar">
+            <ul>
+                <li><a href="main.html">Tính Điểm TBHK</a></li>
+                <li><a href="TBTL.html">Trung Bình Tích Lũy</a></li>
+                <li><a href="#">Trung Bình Tích Lũy Mong Muốn</a></li>
+                <li><a href="CaiThien.html">Cải Thiện</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-box">
+            <h1 style="text-align: center;">CẢI THIỆN ĐIỂM TÍCH LŨY</h1>
+            <div class="include_TC_TBTL">
+                <label class="label">Số tín chỉ tích lũy:</label><br>
+                <input class="inputBox" id="tinchiTL" onkeydown="if(event.key==='-') event.preventDefault();"><br>
+                <small style="color: rgb(106, 105, 105);">( Ngoại trừ các tín chỉ điều kiện như 10 chỉ AVCB, 8 chỉ QPAN, 3 chỉ thể chất, 3 chỉ tin học căn bản (NLSUD))</small>
+            </div>
+            <div class="include_TC_TBTL">
+                <label class="label">Điểm trung bình tích lũy hiện tại:</label><br>
+                <input class="inputBox" id="diemTBTL" type="number" step="0.01" onkeydown="if(event.key==='-') event.preventDefault();"> 
+            </div>
+
+            <h2 style="text-align: center;">CẢI THIỆN</h2>
+            <div class="tinchivaDiem">
+                <div>
+                    <label class="label">Số tín chỉ:</label>
+                    <input class="inputTC" id="tinchiCT" min="1" max="50" oninput="if(parseFloat(this.value>50)) this.value='50';"><br>
+                </div>
+                <div>
+                    <label class="label" style="font-size: 20px;" for="Diem">Điểm trước:</label>
+                    <select class="selectDiem" id="Diem-Before">
+                        <option value="">Chọn điểm</option>
+                        <option>A</option>
+                        <option>B+</option>
+                        <option>B</option>
+                        <option>C+</option>
+                        <option>C</option>
+                        <option>D+</option>
+                        <option>D</option>                  
+                    </select>
+                </div>
+                <div>
+                    <label class="label" style="font-size: 20px;" for="Diem">Điểm sau:</label>
+                    <select class="selectDiem" id="Diem-After">
+                        <option value="">Chọn điểm</option>
+                        <option>A</option>
+                        <option>B+</option>
+                        <option>B</option>
+                        <option>C+</option>
+                        <option>C</option>
+                        <option>D+</option>
+                        <option>D</option>                  
+                    </select>
+                </div>
+                <button class="btn" onclick="themmon()">Thêm</button>
+            </div>               
+            <small style="color:rgb(106,105,105);">( Ngoại trừ các tín chỉ điều kiện như 10 chỉ AVCB, 8 chỉ QPAN, 3 chỉ thể chất, 3 chỉ tin học căn bản (NLSUD))</small>
+
+            <div class="list-box">
+                <ul class="listBox" id="list" >
+                </ul>
+                 <button class="xoa" id="XoaTatCa" onclick="xoaTatCa()" style="display:none">Xóa tất cả</button>
+            </div>
+            <div>
+                <button class="dtbtl" onclick="ketqua()">Tính điểm</button>
+                <p class="ketqua" id="ketqua"></p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footerBox">
+        <div class="contact">
+            <span style="font-size: 20px; "><b>LIÊN HỆ:</b></span> <br>
+            <a href="#"><img src="iconFB.webp" class="footer_img"></a>
+            <a href="https://github.com/NBN17725"><img src="icon github.png" class="footer_img"></a>
+        </div>
+    </footer>
+</body>
+</html>
